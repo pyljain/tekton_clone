@@ -1,0 +1,2 @@
+export CONN_STRING=postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable
+docker exec -it pg psql postgres://postgres:postgres@localhost:5432/postgres

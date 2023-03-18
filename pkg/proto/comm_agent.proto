@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "tektonclone/pkg/proto";
+
+service Events {
+    rpc getEvent (getEventRequest) returns (stream event) {}
+}
+
+message getEventRequest {
+    string token = 1;
+}
+
+message event {
+    string eventId = 1;
+    eventType type = 2;
+    string repositoryName = 3;
+    string commitRef = 4;
+}
+
+enum eventType {
+    executePipeline = 0;
+    abortPipeline = 1;
+}
